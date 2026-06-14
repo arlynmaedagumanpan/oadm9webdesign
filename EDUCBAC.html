@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Educational Background</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background:#f8f6f4;
+    font-family:'Poppins',sans-serif;
+    color:#333;
+}
+
+header{
+    text-align:center;
+    padding:50px 20px;
+}
+
+.section-title{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    color:red;
+    margin:40px 0 25px;
+    font-size:35px;
+}
+
+.education-container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    color:red;
+    margin-bottom:10px;
+}
+
+.card p{
+    line-height:1.8;
+}
+
+.awards{
+    width:90%;
+    max-width:1000px;
+    margin:30px auto;
+}
+
+.award-box{
+    background:white;
+    margin-bottom:15px;
+    padding:18px;
+    border-left:5px solid red;
+    border-radius:10px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact-section{
+    width:90%;
+    max-width:1000px;
+    margin:50px auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact-info,
+.contact-form{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+.contact-info h2,
+.contact-form h2{
+    color:red;
+    margin-bottom:15px;
+}
+
+.contact-info p{
+    margin:15px 0;
+}
+
+.social-links a{
+    display:inline-block;
+    margin:10px 10px 0 0;
+    text-decoration:none;
+    background:red;
+    color:white;
+    padding:10px 15px;
+    border-radius:30px;
+}
+
+.contact-form input,
+.contact-form textarea{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ddd;
+    border-radius:10px;
+    font-family:'Poppins',sans-serif;
+}
+
+.contact-form button{
+    width:100%;
+    padding:12px;
+    border:none;
+    background:red;
+    color:white;
+    border-radius:10px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    margin-top:30px;
+    color:#666;
+}
+
+@media(max-width:768px){
+    .contact-section{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+
+<h2 class="section-title">EDUCATIONAL BACKGROUND</h2>
+
+<div class="education-container">
+
+    <div class="card">
+        <h3>Elementary School</h3>
+        <p>
+            <strong>School Name:</strong> Lacaron Integrated School<br>
+            <strong>Year Graduated:</strong> 2017-2018<br>
+            <strong>Address:</strong> Lacaron Sibalom Antique
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>Junior High School</h3>
+        <p>
+            <strong>School Name:</strong> Lacaron Integrated School<br>
+           <strong>Year Graduated:</strong> 2021-2022<br>
+            <strong>Address:</strong> Lacaron Sibalom Antique
+        </p>
+    </div>
+    
+    <div class="card">
+        <h3>Senior High School</h3>
+        <p>
+            <strong>School Name:</strong> Belison National School<br>
+            <strong>Strand:</strong>Humanities and Social Sciences<br>
+           <strong>Year Graduated:</strong> 2023-2024<br>
+            <strong>Address:</strong> Bonifacio St. Belison Antique
+        </p>
+    </div>
+
+    <div class="card">
+        <h3>College</h3>
+        <p>
+            <strong>School Name:</strong> University of Antique<br>
+            <strong>Course:</strong> Bachelor of Science in Office Administration<br>
+            <strong>Year Level:</strong> Second Year College
+        </p>
+    </div>
+
+</div>
+
+<h2 class="section-title">Awards & Achievements</h2>
+
+<div class="awards">
+  
+      <div class="award-box">
+      <span style="color:red; font-size:20px; font-weight:bold;">Elementary School</span> <br><br>
+        <ul>
+          <li>History and Culture Quizbee - 4th Runner Up</li><br>
+         
+    </div>
+    
+        <div class="award-box">
+      <span style="color:red; font-size:20px; font-weight:bold;">Junior High School</span> <br><br>
+        <ul>
+         <li>Division Mathlympics - Participant</li><br>
+         
+    </div>
+    
+        <div class="award-box">
+         <span style="color:red; font-size:20px; font-weight:bold;">Senior High School</span> <br><br>
+        <ul>
+          <li>With High Honors</li><br>
+         <li>Award for Work Immersion</li><br>
+         <li>Manuscript Speech Delivery - Best Performer</li><br>
+         <li>Poetry Interpretation Representative</li></ul> 
+    </div>
+  
+  <div class="award-box">
+      <span style="color:red; font-size:20px; font-weight:bold;">College</span> <br><br>
+        <ul>
+          <li>Dean's Lister</li><br>
+         <li>Office Skills Competition - Participant</li><br>
+        <li>English Language Festival - Character Impersonator(3rd Place)</li><br>
+         
+    </div>
+</div>
+
+<div class="contact-section">
+
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+
+        <p><strong>Email:</strong><br>
+        arlynmaedagumanpan@gmail.com</p>
+
+        <p><strong>Mobile Number:</strong><br>
+        09426364064</p>
+
+        <p><strong>Social Media Links:</strong></p>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com">Facebook</a>
+            <a href="https://www.pinterest.com">Pinterest</a>
+        </div>
+    </div>
+
+    <div class="contact-form">
+        <h2>Contact Form</h2>
+
+        <form>
+            <input type="text" placeholder="Your Name" required>
+
+            <input type="email" placeholder="Email Address" required>
+            
+            <input type="number" placeholder="Mobile number" required>
+
+            <textarea rows="5" placeholder="Write your message here..." required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+</div>
+
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pinterest Inspired Resume</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+    background:#fff5e4;
+    padding:40px;
+}
+
+.resume{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:300px 1fr;
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,0.1);
+}
+
+/* LEFT SIDE */
+.sidebar{
+    background:white;
+    color:black;
+    padding:35px 25px;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.profile img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid rgba(255,255,255,0.3);
+}
+
+.profile h1{
+    margin-top:15px;
+    font-size:28px;
+    font-weight:700;
+}
+
+.profile p{
+    font-size:14px;
+    opacity:.9;
+}
+
+.section{
+    margin-bottom:30px;
+}
+
+.section h2{
+    font-size:18px;
+    margin-bottom:15px;
+    border-bottom:2px solid rgba(255,255,255,.3);
+    padding-bottom:8px;
+    color:black;
+}
+
+.contact p{
+    margin-bottom:10px;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.skills ul{
+    list-style:none;
+}
+
+.skills li{
+    background:rgba(255,255,255,0.15);
+    padding:8px 12px;
+    margin-bottom:10px;
+    border-radius:20px;
+    font-size:14px;
+}
+
+/* RIGHT SIDE */
+.content{
+    padding:40px;
+    background:#fff;
+}
+
+.card{
+    background:#fafafa;
+    border-radius:18px;
+    padding:25px;
+    margin-bottom:25px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.05);
+}
+
+.card h2{
+    color:black;
+    margin-bottom:15px;
+    font-size:24px;
+}
+
+.card p,
+.card li{
+    color:#444;
+    line-height:1.8;
+}
+
+.timeline{
+    list-style:none;
+}
+
+.timeline li{
+    margin-bottom:20px;
+    padding-left:20px;
+    border-left:3px solid black;
+}
+
+.timeline h3{
+    color:#222;
+    margin-bottom:5px;
+}
+
+.timeline span{
+    color:#777;
+    font-size:14px;
+}
+
+@media(max-width:768px){
+    .resume{
+        grid-template-columns:1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="resume">
+
+    <!-- LEFT SIDE -->
+    <aside class="sidebar">
+
+        <div class="profile">
+            <img src="formalpic.jpg" alt="Profile Picture">
+            <h1>ARLYN MAE DAGUMANPAN</h1>
+            <p>Office Administration Student</p>
+        </div>
+
+        <div class="section contact">
+            <h2>Contact</h2>
+            <p>+63 942 636 4064</p>
+            <p>arlynmaedagumanpan@gmail.com</p>
+            <p>Sibalom Antique, Philippines</p>
+        </div>
+        
+
+        <div class="section skills">
+            <h2>Skills</h2>
+            <ul>
+               <li> Keyboarding Skills</li>
+                <li>Data Processing</li>
+                <li>Communication Skills</li>
+                <li>Management Skills</li>
+                <li>Team Collaboration</li>
+              </ul>
+        </div>
+        </aside>
+
+    <!-- RIGHT SIDE -->
+    <main class="content">
+           
+            <div class="card">
+            <h2>Career Objective</h2>
+            <p>
+                A dedicated and goal-oriented Bachelor of Science in Office Administration student striving to build a succesful career in administrative and business management.Committed to applying strong organizational and communication skills to contribute effectively in a professional environment.Seeking oppurtunities to gain valuable experiences, enhance professional competencies, and support organizational growth while achieving continuos personal and career development.
+            </p>
+        </div>
+
+<div class="card">
+            <h2>Education</h2>
+            <p>
+              University of Antique<br>
+                  Bachelor of Science in Office Administration<br> Dean's Lister
+                  <br><br>
+                  
+                  Belison National School<br>
+                  Humanities and Social Sciences<br> With High Honors<br><br>
+                  
+                  Lacaron Integrated School<br> With Honors
+                  </p>
+                  </div>
+
+
+        <div class="card">
+            <h2>Trainings & Seminars</h2>
+
+            <ul class="timeline">
+
+                <li>
+                    <h3>English for Business and Entrepreneurship | TESDA Online Program</h3>
+                    <span>2026</span>
+                    
+                </li>
+
+                <li>
+                    <h3>Workplace Communication | TESDA Online Program</h3>
+                    <span>2026</span>
+                    
+                </li>
+
+                <li>
+                    <h3>REceiving and Responding to Workplace Communication | TESDA Online Program</h3>
+                    <span>2026</span>
+                    
+                </li>
+
+                <li>
+                    <h3>Professional Development Seminar: Work Ethics and Business Etiquette | University of Antique</h3>
+                    <span>2026</span>
+                    <p> Gained insights on responsibility, teamwork, confidentiality, and ethical desicion making in professional setting.</p>
+
+                    <li>
+                    <h3>Office Skills Competition- Participant | University of Antique</h3>
+                    <span>2025</span>
+                    <p>Demonstrated knowledge, quick recall, and critical thinking under time pressure.</p>
+
+            </ul>
+        </div>
+
+    </main>
+
+</div>
+
+</body>
+</html>

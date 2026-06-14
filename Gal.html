@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Photo Albums</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff8f5,#f4f7ff);
+    font-family:'Poppins',sans-serif;
+    padding:40px 20px;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.title h1{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+    color:#333;
+}
+
+.title p{
+    color:#666;
+}
+
+.album-container{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:70px 40px;
+}
+
+.album{
+    text-decoration:none;
+    color:inherit;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.stack{
+    position:relative;
+    width:240px;
+    height:220px;
+    transition:.4s;
+}
+
+.stack:hover{
+    transform:translateY(-10px);
+}
+
+.back1,
+.back2,
+.main-photo{
+    position:absolute;
+    width:190px;
+    height:190px;
+    border-radius:28px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.back1{
+    background:white;
+    top:18px;
+    left:40px;
+    transform:rotate(15deg);
+}
+
+.back2{
+    background:#f7f7f7;
+    top:8px;
+    left:25px;
+    transform:rotate(7deg);
+}
+
+.main-photo{
+    overflow:hidden;
+    top:0;
+    left:0;
+    transform:rotate(-8deg);
+    border:5px solid white;
+}
+
+.main-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.album-name{
+    margin-top:10px;
+    font-size:1rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    text-align:center;
+    color:#444;
+    transition:.3s;
+}
+
+.album:hover .album-name{
+    color:#7b68ee;
+}
+
+@media(max-width:700px){
+
+.album-container{
+    grid-template-columns:1fr;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="title">
+    <h1>My Albums</h1>
+    <p>Moments, memories and milestones</p>
+</div>
+
+<div class="album-container">
+
+    <!-- Senior High School Memories -->
+    <a href="Gal5.html" class="album">
+        <div class="stack">
+            <div class="back1"></div>
+            <div class="back2"></div>
+            <div class="main-photo">
+                <img src="shsmem.png">
+            </div>
+        </div>
+        <div class="album-name">Senior High School Memories</div>
+    </a>
+
+    <!-- Best Friends -->
+    <a href="Gal4.html" class="album">
+        <div class="stack">
+            <div class="back1"></div>
+            <div class="back2"></div>
+            <div class="main-photo">
+                <img src="bff.png">
+            </div>
+        </div>
+        <div class="album-name">Best Friends</div>
+    </a>
+
+    <!-- Awards -->
+    <a href="Gal3.html" class="album">
+        <div class="stack">
+            <div class="back1"></div>
+            <div class="back2"></div>
+            <div class="main-photo">
+                <img src="awardcvrpg.png">
+            </div>
+        </div>
+        <div class="album-name">Awards & Achievements</div>
+    </a>
+
+    <!-- Family -->
+    <a href="Gal1.html" class="album">
+        <div class="stack">
+            <div class="back1"></div>
+            <div class="back2"></div>
+            <div class="main-photo">
+                <img src="familycover.png">
+            </div>
+        </div>
+        <div class="album-name">Family</div>
+    </a>
+
+    <!-- Supporters -->
+    <a href="Gal6.html" class="album">
+        <div class="stack">
+            <div class="back1"></div>
+            <div class="back2"></div>
+            <div class="main-photo">
+                <img src="cmgday.png">
+            </div>
+        </div>
+        <div class="album-name">CMG DAY</div>
+    </a>
+
+</div>
+
+</body>
+</html>

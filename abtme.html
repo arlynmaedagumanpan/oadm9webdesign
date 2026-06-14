@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Pinterest Website</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8f8f8;
+    color:#333;
+}
+
+/* Cover Section */
+.cover{
+    height:300px;
+    background:linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.3)),
+    url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee');
+    background-size:cover;
+    background-position:center;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:white;
+    text-align:center;
+}
+
+.cover h1{
+    font-family:'Playfair Display',serif;
+    font-size:3rem;
+}
+
+.cover p{
+    margin-top:10px;
+    font-size:1.1rem;
+}
+
+/* Profile Card */
+.profile-card{
+    width:90%;
+    max-width:1000px;
+    background:white;
+    margin:-70px auto 40px;
+    border-radius:25px;
+    padding:30px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.profile-header{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    gap:30px;
+}
+
+.profile-pic{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:6px solid white;
+    box-shadow:0 5px 20px rgba(0,0,0,.15);
+}
+
+.profile-info h2{
+    font-size:2rem;
+    color:#e60023;
+}
+
+.profile-info h4{
+    color:#666;
+    margin-top:8px;
+}
+
+.welcome{
+    margin-top:15px;
+    font-style:italic;
+    color:#777;
+}
+
+/* Sections */
+.section{
+    margin-top:35px;
+}
+
+.section-title{
+    display:inline-block;
+    padding:8px 18px;
+    background:#e60023;
+    color:white;
+    border-radius:20px;
+    margin-bottom:15px;
+    font-size:1rem;
+}
+
+.section p{
+    line-height:1.8;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#fafafa;
+    padding:20px;
+    border-radius:18px;
+    box-shadow:0 5px 15px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-5px);
+}
+
+ul{
+    padding-left:20px;
+}
+
+li{
+    margin-bottom:10px;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#888;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Cover Banner -->
+<div class="cover">
+    <div>
+        <h1>Welcome to My Story</h1>
+        <p>Discover my journey, interests, and aspirations.</p>
+    </div>
+</div>
+
+<!-- Profile Card -->
+<div class="profile-card">
+
+    <div class="profile-header">
+        <img src="image.png" alt="Profile Picture" class="profile-pic">
+
+        <div class="profile-info">
+            <h2>ARLYN MAE DAGUMANPAN</h2>
+            <h4>BS Office Administration - 2nd Year</h4>
+
+            <p class="welcome"> 
+                Collecting Dreams, Creating Memories. <br>
+                Welcome to my digital scrapbook-a place filled with inspiration, achievements, creativity and growth.
+                Every section tells a story, every detail reflects my journey. Stay awhile, explore, and discover what inspires me.
+            </p>
+        </div>
+    </div>
+
+    <!-- Introduction -->
+    <div class="section">
+        <h3 class="section-title">Short Introduction</h3>
+        <p>
+            Hello! I am Arlyn Mae Dagumanpan, a passionate student who
+            enjoys learning new things, exploring creative ideas, and
+            capturing meaningful memories. I believe that every experience
+            contributes to personal growth and helps shape a better future.
+        </p>
+    </div>
+
+    <!-- Personal Background -->
+    <div class="section">
+        <h3 class="section-title">Personal Background</h3>
+        <p>
+            Hello! I am an Office Administration student who is passionate about learning, growing, and discovering new opportunities. I enjoy developing organizational and administrative skills that prepare me for a successful pfofessional career.<br><br> Beyond academics, I have a deep love for traveling and exploring new places. Every journey allows me to experience different cultures, meet new people, and gain valuable perspective about life. Traveling has taught me adaptability, independence, and the importance of embracing new experiences.<br><br> As I continue my journey, I am also searching for my true purpose and striving to become the best version of myself. I believe that every experience, challenge, and achievement contributes to personal growth and helps shape the future I want to create. Through this website, I hope to share my story, and inspirations as I navigate life with curiosity, determination, and an open heart. This version feels personal, reflective, and Pinterest-worthy while still sounding professional for a student portfolio.
+        </p>
+    </div>
+
+    <!-- Hobbies and Interests -->
+    <div class="section">
+        <h3 class="section-title">Hobbies & Interests</h3>
+
+        <div class="grid">
+            <div class="card">
+                <h4>📸 Photography</h4>
+                <p>Capturing beautiful moments and memories.</p>
+            </div>
+
+            <div class="card">
+                <h4>🎵 Music</h4>
+                <p>Listening to music for inspiration and relaxation.</p>
+            </div>
+
+            <div class="card">
+                <h4>✈️ Travel</h4>
+                <p>Exploring new places and discovering cultures.</p>
+            </div>
+
+            <div class="card">
+                <h4>🎨 Creativity</h4>
+                <p>Designing aesthetic projects and digital content.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Skills -->
+    <div class="section">
+        <h3 class="section-title">Skills & Talents</h3>
+
+        <div class="grid">
+            <div class="card">
+                <ul>
+                    <li>Communication Skills</li>
+                    <li>Organization & Planning</li>
+                    <li>Microsoft Office Applications</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <ul>
+                    <li>Creative Design</li>
+                    <li>Typing & Documentation</li>
+                    <li>Teamwork & Leadership</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Career Goals -->
+    <div class="section">
+        <h3 class="section-title">Career Goals</h3>
+        <p>
+            My goal is to become a competent and successful professional
+            in the field of Office Administration. I aspire to work in
+            an organization where I can apply my skills, contribute
+            effectively, and continue growing both personally and
+            professionally. I am committed to lifelong learning and
+            achieving excellence in everything I do.
+        </p>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

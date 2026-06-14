@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About Me</title>
+<style>
+* { 
+  margin: 0; 
+  padding: 0; 
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif; 
+}
+
+body { 
+  background: linear-gradient(to right, #ffdde1, #ee9ca7); 
+  min-height: 100vh; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  padding: 20px;
+}
+
+.about-container { 
+  width: 900px; 
+  background: pink; 
+  border-radius: 20px; 
+  overflow: hidden; 
+  display: flex; 
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+}
+
+/* LEFT SIDE - Profile header arranged */
+.left-side { 
+  background: Purple; 
+  color: purple; 
+  width: 40%; 
+  padding: 40px;
+  display: flex;
+  align-items: center; /* centers pic vertically to text */
+  gap: 20px;
+}
+
+.left-side img { 
+  width: 100px; /* smaller so it centers better with text */
+  height: 100px; 
+  border-radius: 50%; 
+  border: 4px solid white; 
+  object-fit: cover; 
+  flex-shrink: 0;
+}
+
+.profile-text h1 { 
+  font-size: 24px; 
+  margin-bottom: 5px;
+  color: white;
+}
+
+.profile-text p { 
+  font-size: 16px; 
+  margin-bottom: 15px;
+  color: #ffd1dc;
+}
+
+.socials a { 
+  text-decoration: none; 
+  color: white; 
+  margin-right: 12px; 
+  font-size: 16px; 
+  transition: 0.3s; 
+}
+
+.socials a:hover { 
+  color: #ffd1dc; 
+}
+
+.right-side { 
+  width: 60%; 
+  padding: 50px; 
+  background: white;
+}
+
+.right-side h2 { 
+  color: #e60023; 
+  margin-bottom: 20px; 
+  font-size: 35px; 
+}
+
+.right-side p { 
+  line-height: 1.8; 
+  margin-bottom: 20px; 
+  color: #555; 
+}
+
+.info { 
+  display: grid; 
+  grid-template-columns: 1fr 1fr; 
+  gap: 20px; 
+}
+
+.box { 
+  background: Pink; 
+  padding: 20px; 
+  border-radius: 15px; 
+  transition: 0.3s; 
+}
+
+.box:hover { 
+  transform: translateY(-5px); 
+  background: Pink; /* changed Pink to hex */
+}
+
+.box h3 { 
+  color: #e60023; 
+  margin-bottom: 10px; 
+}
+
+@media(max-width: 768px) { 
+  .about-container { 
+    flex-direction: column; 
+    width: 95%; 
+  } 
+  .left-side, .right-side { 
+    width: 100%; 
+  } 
+  .info { 
+    grid-template-columns: 1fr; 
+  }
+  .left-side {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="about-container">
+  
+  <!-- LEFT SIDE - Arranged: pic left, text right -->
+  <div class="left-side">
+    <img src="shesh.jpg" alt="Profile Picture">
+    <div class="profile-text">
+      <h1>Angelica Jane Manuel</h1>
+      <p>BS Office Administration Student</p>
+      <div class="socials">
+        <a href="https://www.facebook.com">Facebook</a>
+        <a href="https://www.instagram.com">Instagram</a>
+        <a href="https://www.tiktok.com">TikTok</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- RIGHT SIDE -->
+  <div class="right-side">
+    <h2>About Me</h2>
+    <p>Hello! I am a passionate and hardworking student of office management and creativity. I enjoy learning new things and improving my skills in technology and communication.</p>
+    
+    <div class="info">
+      <div class="box">
+        <h3>Hobbies</h3>
+        <p>Reading, Music, Photography, Playing Instruments, Drawing, Watching Kdrama.</p>
+      </div>
+      <div class="box">
+        <h3>Skills</h3>
+        <p>Time management, Problem solving, Effective Communication</p>
+      </div>
+      <div class="box">
+        <h3>Goals</h3>
+        <p>To become a successful Office Administrator and Business Owner</p>
+      </div>
+      <div class="box">
+        <h3>Education</h3>
+        <p>BS Office Administration - 2nd Year</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Angelica Jane Manuel - Inspiration Board</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: black;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      color: white;
+    }
+
+  .profile { display: flex; align-items: center; gap: 15px; margin-bottom: 30px; }
+  .profile img {
+      width: 70px; height: 100px;
+      border-radius: 50%;
+      border: 2px solid white;
+      object-fit: cover;
+    }
+  .name { font-weight: bold; font-size: 18px; margin-bottom: 3px; }
+  .handle { font-size: 14px; opacity: 0.8; }
+
+  .stats { display: flex; gap: 10px; margin-top: 10px; }
+  .stat-btn {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
+      color: white;
+      padding: 6px 12px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  .stat-btn:hover { background: rgba(255,255,255,0.2); }
+
+  .actions { margin-bottom: 20px; }
+    a, button {
+      color: white; text-decoration: none;
+      padding: 8px 14px; border: 1px solid white;
+      border-radius: 10px; font-size: 14px;
+      margin-right: 10px; margin-bottom: 10px;
+      cursor: pointer; background: purple;
+      display: inline-block; transition: 0.2s;
+    }
+    a:hover, button:hover { background-color: rgba(255, 255, 255, 0.2); }
+
+  .search-bar { margin: 20px 0; }
+  .search-bar input {
+      width: 100%; max-width: 500px;
+      padding: 12px 20px; border: none;
+      border-radius: 24px; font-size: 16px;
+      outline: none; background: rgba(255,255,255,0.9);
+      color: #333;
+    }
+
+  .boards-tabs {
+      display: flex; gap: 10px;
+      margin: 25px 0 15px 0;
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+      padding-bottom: 10px; flex-wrap: wrap;
+    }
+  .tab-btn {
+      background: purple; border: 1px solid white;
+      color: white; padding: 8px 16px;
+      border-radius: 8px; cursor: pointer;
+      font-weight: 600; font-size: 15px;
+      display: flex; align-items: center; gap: 8px;
+    }
+  .tab-btn.active { background: white; color: purple; }
+  .tab-btn img {
+      width: 24px; height: 24px;
+      border-radius: 4px; object-fit: cover;
+    }
+
+  .create-pin-btn {
+      background: #e60023; color: white; border: none;
+      padding: 10px 18px; border-radius: 24px;
+      font-weight: bold; cursor: pointer; font-size: 14px;
+      margin-bottom: 20px;
+    }
+  .create-pin-btn:hover { background: #ad081b; }
+
+  .board-title { font-size: 22px; font-weight: bold; margin: 20px 0 15px 0; }
+
+  .pin-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 16px; margin-top: 20px;
+    }
+
+  .pin {
+      position: relative; border-radius: 16px;
+      overflow: hidden; background: #5a2a8a;
+      cursor: pointer; transition: transform 0.2s;
+    }
+  .pin:hover { transform: scale(1.03); }
+  .pin img { width: 100%; height: 250px; object-fit: cover; display: block; }
+
+  .pin-overlay {
+      position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4); opacity: 0;
+      transition: opacity 0.3s;
+      display: flex; justify-content: space-between;
+      align-items: flex-start; padding: 10px;
+    }
+  .pin:hover.pin-overlay { opacity: 1; }
+
+  .save-btn {
+      background: #e60023; color: white; border: none;
+      padding: 8px 14px; border-radius: 24px;
+      font-weight: bold; cursor: pointer; font-size: 14px;
+    }
+  .save-btn:hover { background: #ad081b; }
+
+  .more-btn {
+      background: rgba(255,255,255,0.9); border: none;
+      width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; font-size: 18px; color: #333;
+    }
+
+  .pin-caption { padding: 10px; font-size: 14px; }
+
+  .overlay-bg {
+      display: none; position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.5); z-index: 999;
+    }
+
+    /* FIXED: Removed max-height so all Following show */
+  .popup {
+      display: none; position: fixed;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      background: #5a2a8a; padding: 20px;
+      border-radius: 16px; border: 2px solid white;
+      z-index: 1000; width: 320px;
+    }
+  .popup h3 { margin-bottom: 15px; }
+  .close { float: right; cursor: pointer; font-size: 20px; }
+  .user-item {
+      display: flex; align-items: center; gap: 10px;
+      margin: 10px 0; padding: 8px; border-radius: 8px;
+    }
+  .user-item img {
+      width: 40px; height: 40px;
+      border-radius: 50%; object-fit: cover;
+    }
+
+  .add-pin-form input,.add-pin-form textarea,.add-pin-form select {
+      width: 100%; padding: 10px; margin: 8px 0;
+      border-radius: 8px; border: none; font-size: 14px;
+    }
+  .add-pin-form label { font-size: 14px; display: block; margin-top: 10px; }
+  </style>
+</head>
+<body>
+
+  <div class="profile">
+    <img src="wow.jpg" alt="Angelica Jane Manuel" id="profilePic">
+    <div>
+      <p class="name">Angelica Jane Manuel</p>
+      <p class="handle">@anglux_mnl</p>
+      <div class="stats">
+        <button class="stat-btn" onclick="showPopup('followers')"><b>100</b> Followers</button>
+        <button class="stat-btn" onclick="showPopup('following')"><b>7</b> Following</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="actions">
+    <a href="Pinlog.html">Log In</a>
+    <a href="Pinlog.html">Log Out</a>
+    <button onclick="alert('Edit Profile clicked!')">Edit Profile</button>
+  </div>
+
+  <nav>
+    <a href="Aboutme.html">ABOUT ME</a>
+    <a href="Educback.html">EDUCATIONAL BACKGROUND</a>
+    <a href="Phtogal.html">PHOTO GALLERY</a>
+    <a href="Resume.html">RESUME</a>
+  </nav>
+
+  <div class="search-bar">
+    <input type="text" placeholder="Search your pins..." onkeyup="searchPins(this.value)">
+  </div>
+
+  <!-- TABS WITH IMAGES - PUT YOUR PICTURE LINK IN src="" -->
+  <div class="boards-tabs">
+    <button class="tab-btn active" onclick="filterBoard('all', this)">All Pins</button>
+
+    <button class="tab-btn" onclick="filterBoard('bts', this)">BTS</button>
+    <button class="tab-btn" onclick="filterBoard('dream', this)">Dream Country</button>
+    <button class="tab-btn" onclick="filterBoard('purple', this)">Purple</button>
+  </div>
+
+  <button class="create-pin-btn" onclick="showPopup('addpin')">+ Create Pin</button>
+  <h2 class="board-title">My Inspiration Board</h2>
+
+  <div class="pin-grid" id="pinGrid">
+    <div class="pin" data-category="bts">
+      <img src="bts.jpg" alt="BTS">
+      <div class="pin-overlay">
+        <button class="save-btn" onclick="alert('Saved!')">Save</button>
+        <button class="more-btn" onclick="alert('More options')">⋯</button>
+      </div>
+      <p class="pin-caption">BTS</p>
+    </div>
+
+    <div class="pin" data-category="dream">
+      <img src="seoul.jpg" alt="Seoul">
+      <div class="pin-overlay">
+        <button class="save-btn" onclick="alert('Saved!')">Save</button>
+        <button class="more-btn" onclick="alert('More options')">⋯</button>
+      </div>
+      <p class="pin-caption">Dream Country</p>
+    </div>
+
+    <div class="pin" data-category="purple">
+      <img src="prpl.jpg" alt="Purple">
+      <div class="pin-overlay">
+        <button class="save-btn" onclick="alert('Saved!')">Save</button>
+        <button class="more-btn" onclick="alert('More options')">⋯</button>
+      </div>
+      <p class="pin-caption">Purple aesthetic</p>
+    </div>
+  </div>
+
+  <div class="overlay-bg" id="overlay" onclick="hidePopup()"></div>
+  <div class="popup" id="following-popup">
+    <span class="close" onclick="hidePopup()">×</span>
+    <h3>7 Following</h3>
+
+    <div class="user-item">
+      <img src="him.jpg" alt="Kim Taehyung">
+      <div>
+        <div style="font-weight:bold;">Kim Taehyung</div>
+        <div style="font-size:12px; opacity:0.9;">@thv</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="joonie.png" alt="Kim Namjoon">
+      <div>
+        <div style="font-weight:bold;">Kim Namjoon</div>
+        <div style="font-size:12px; opacity:0.9;">@rkive</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="jin.png" alt="Kim Seokjin">
+      <div>
+        <div style="font-weight:bold;">Kim Seokjin</div>
+        <div style="font-size:12px; opacity:0.9;">@jin</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="suga.png" alt="Min Yoongi">
+      <div>
+        <div style="font-weight:bold;">Min Yoongi</div>
+        <div style="font-size:12px; opacity:0.9;">@agustd</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="hope.png" alt="Jung Hoseok">
+      <div>
+        <div style="font-weight:bold;">Jung Hoseok</div>
+        <div style="font-size:12px; opacity:0.9;">@uarmyhope</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="jeon.png" alt="Jeon Jungkook">
+      <div>
+        <div style="font-weight:bold;">Jeon Jungkook</div>
+        <div style="font-size:12px; opacity:0.9;">@mnijungkook</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+
+    <div class="user-item">
+      <img src="jm.png" alt="Park Jimin">
+      <div>
+        <div style="font-weight:bold;">Park Jimin</div>
+        <div style="font-size:12px; opacity:0.9;">@j.m</div>
+      </div>
+      <button class="save-btn" style="margin-left:auto; padding:6px 15px; font-size:14px;">Following</button>
+    </div>
+  </div>
+
+  <!-- Followers Popup -->
+  <div class="popup" id="followers-popup">
+    <span class="close" onclick="hidePopup()">×</span>
+    <h3>100 Followers</h3>
+    <div class="user-item">
+      <img src="https://picsum.photos/40/40?random=10" alt="User">
+      <span>@user_01</span>
+      <button style="margin-left:auto; padding:4px 10px; font-size:12px;">Follow</button>
+    </div>
+    <p style="opacity:0.7; font-size:12px;">...and 99 more</p>
+  </div>
+
+  <!-- Add Pin Popup -->
+  <div class="popup" id="addpin-popup">
+    <span class="close" onclick="hidePopup()">×</span>
+    <h3>Add New Pin</h3>
+    <div class="add-pin-form">
+      <label>Upload Picture:</label>
+      <input type="file" id="imageUpload" accept="image/*" onchange="previewImage(event)">
+      <label>Caption:</label>
+      <input type="text" id="pinCaption" placeholder="Write a caption...">
+      <label>Category:</label>
+      <select id="pinCategory">
+        <option value="aesthetic">Aesthetic</option>
+        <option value="study">Study</option>
+        <option value="bts">BTS</option>
+        <option value="dream">Dream Country</option>
+        <option value="purple">Purple</option>
+      </select>
+      <button class="create-pin-btn" style="width:100%; margin-top:15px;" onclick="addNewPin()">Add Pin</button>
+    </div>
+  </div>
+
+  <script>
+    let uploadedImage = '';
+
+    function showPopup(type) {
+      document.getElementById('overlay').style.display = 'block';
+      document.getElementById(type + '-popup').style.display = 'block';
+    }
+
+    function hidePopup() {
+      document.getElementById('overlay').style.display = 'none';
+      document.querySelectorAll('.popup').forEach(p => p.style.display = 'none');
+    }
+
+    function filterBoard(category, btn) {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const pins = document.querySelectorAll('.pin');
+      pins.forEach(pin => {
+        if(category === 'all' || pin.dataset.category === category) {
+          pin.style.display = 'block';
+        } else {
+          pin.style.display = 'none';
+        }
+      });
+    }
+
+    function searchPins(value) {
+      const pins = document.querySelectorAll('.pin');
+      pins.forEach(pin => {
+        const caption = pin.querySelector('.pin-caption').textContent.toLowerCase();
+        if(caption.includes(value.toLowerCase())) {
+          pin.style.display = 'block';
+        } else {
+          pin.style.display = 'none';
+        }
+      });
+    }
+
+    function previewImage(event) {
+      const file = event.target.files[0];
+      if(file) {
+        const reader = new FileReader();
+        reader.onload = function() { uploadedImage = reader.result; }
+        reader.readAsDataURL(file);
+      }
+    }
+
+    function addNewPin() {
+      const caption = document.getElementById('pinCaption').value;
+      const category = document.getElementById('pinCategory').value;
+
+      if(!uploadedImage) { alert('Please upload a picture first!'); return; }
+      if(!caption) { alert('Please add a caption!'); return; }
+
+      const pinGrid = document.getElementById('pinGrid');
+      const newPin = document.createElement('div');
+      newPin.className = 'pin';
+      newPin.dataset.category = category;
+      newPin.innerHTML = `
+        <img src="${uploadedImage}" alt="New Pin">
+        <div class="pin-overlay">
+          <button class="save-btn" onclick="alert('Saved!')">Save</button>
+          <button class="more-btn" onclick="alert('More options')">⋯</button>
+        </div>
+        <p class="pin-caption">${caption}</p>
+      `;
+      pinGrid.prepend(newPin);
+
+      hidePopup();
+      document.getElementById('pinCaption').value = '';
+      document.getElementById('imageUpload').value = '';
+      uploadedImage = '';
+      alert('Pin added successfully!');
+    }
+  </script>
+</body>
+</html>

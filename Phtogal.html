@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- GOOGLE FONTS -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Pacifico&display=swap" rel="stylesheet">
+
+  <title>Photo Gallery</title>
+
+  <style>
+
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+      font-family:'Poppins', sans-serif;
+      background: linear-gradient(to right, #d9a7ff, #a044ff);
+      min-height:100vh;
+      padding:40px;
+    }
+
+    .container{
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* HEADER */
+    .header{
+      text-align:center;
+      color:white;
+      margin-bottom:50px;
+    }
+
+    .header h1{
+      font-family:'Pacifico', cursive;
+      font-size:60px;
+      margin-bottom:10px;
+      text-shadow:2px 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .header p{
+      font-size:20px;
+      opacity:0.9;
+    }
+
+    /* GALLERY GRID */
+    .gallery{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
+      gap:25px;
+    }
+
+    /* CARD */
+    .card{
+      background:white;
+      border-radius:25px;
+      overflow:hidden;
+      box-shadow:0 10px 25px rgba(0,0,0,0.15);
+      transition:0.3s;
+      position:relative;
+    }
+
+    .card:hover{
+      transform:translateY(-10px) scale(1.02);
+    }
+
+    /* IMAGE */
+    .card img{
+      width:100%;
+      height:300px;
+
+      /* IMPORTANT FOR PERFECT SIZE */
+      object-fit:cover;
+
+      display:block;
+    }
+
+    /* CONTENT */
+    .content{
+      padding:20px;
+      text-align:center;
+    }
+
+    .content h2{
+      color:#6a0dad;
+      margin-bottom:10px;
+      font-size:24px;
+    }
+
+    .content p{
+      color:#666;
+      font-size:15px;
+      line-height:1.6;
+    }
+
+    /* BUTTON */
+    .btn{
+      display:inline-block;
+      margin-top:15px;
+      padding:10px 20px;
+      background:#6a0dad;
+      color:white;
+      text-decoration:none;
+      border-radius:30px;
+      transition:0.3s;
+      font-weight:bold;
+    }
+
+    .btn:hover{
+      background:#4b0082;
+    }
+
+    /* FOOTER */
+    .footer{
+      text-align:center;
+      color:white;
+      margin-top:50px;
+      font-size:15px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:768px){
+
+      .header h1{
+        font-size:40px;
+      }
+
+      .card img{
+        height:250px;
+      }
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="header">
+
+      <h1>Photo Gallery</h1>
+
+      <p>My Beautiful Collection of Memories</p>
+
+    </div>
+
+    <!-- GALLERY -->
+    <div class="gallery">
+
+      <!-- PHOTO 1 -->
+      <div class="card">
+
+        <img src="activ.jpg" alt="Gallery Photo">
+
+        <div class="content">
+
+          <h2>School Activity</h2>
+
+          <p>
+            Skills Competition For Steno Writing,Steno Machine,Quiz bee,and Keyboarding.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PHOTO 2 -->
+      <div class="card">
+
+        <img src="semnar.jpg" alt="Gallery Photo">
+
+        <div class="content">
+
+          <h2>Seminar</h2>
+
+          <p>
+            Work Ethics  educational seminars and workshops.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PHOTO 3 -->
+      <div class="card">
+
+        <img src="achi.jpg" alt="Gallery Photo">
+
+        <div class="content">
+
+          <h2>Achievements</h2>
+
+          <p>
+            Dean's lister award for 2024-2025 1st semester.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PHOTO 5 -->
+      <div class="card">
+
+        <img src="fren.jpg" alt="Gallery Photo">
+
+        <div class="content">
+
+          <h2>Friends</h2>
+
+          <p>
+            Captured memories with Churchmates.
+          </p>
+
+        </div>
+
+      </div>
+
+      <!-- PHOTO 6 -->
+      <div class="card">
+
+        <img src="team.jpg" alt="Gallery Photo">
+
+        <div class="content">
+
+          <h2>Team Building</h2>
+
+          <p>
+            Activities in Youth camp that strengthened teamwork and friendship through God.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+   
+    <div class="footer">
+
+    </div>
+
+  </div>
+
+</body>
+</html>
